@@ -2,8 +2,8 @@
 .home {
   flex-direction: column;
   gap: 3rem;
-max-width:100vh
-height:100vh
+max-width:100vh;
+height:100vh;
 overflow-y:hidden;
 overflow-x:hidden ;
 }
