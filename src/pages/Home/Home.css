@@ -1,6 +1,7 @@
 .home {
   flex-direction: column;
   gap: 3rem;
+max-width:100vh
 }
 
 .home h1 {
