@@ -13,7 +13,7 @@ const CountdownPage = () => {
   const [hours, setHours] = useState("00");
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
-  const [timeDifference, setTimeDifference] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState({});
 
   const options = {
@@ -32,9 +32,10 @@ const CountdownPage = () => {
         const date = new Date(datanow.data.time).getTime();
         // const formattedDate = date.getTime();
         console.log(date);
+      
         const now = new Date().getTime();
         const difference = date - now;
-
+setIsLoading(false)
         const timerDays = Math.floor(difference / (1000 * 60 * 60 * 24));
         const timerHours = Math.floor(
           (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -56,8 +57,9 @@ const CountdownPage = () => {
 
   return (
     <div className="countdown__container">
-      <h1>{capitalEvent}</h1>
-      <h4>{data.message}</h4>
+      <h1>{isLoading ? 'Loading...' : capitalEvent}</h1>
+      <h4>{isLoading ? 'kindly Hang on while we set up your Countdown!...' : data.message}</h4>
+      
       <div className="countdown flex">
         <div className="days">
           <span> {days} </span>

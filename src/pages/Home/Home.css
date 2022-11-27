@@ -2,10 +2,9 @@
 .home {
   flex-direction: column;
   gap: 3rem;
-max-width:100vh;
-height:100vh;
-overflow-y:hidden;
-overflow-x:hidden ;
+max-width:100vw;
+/* height:100vh; */
+
 }
 
 .home h1 {
@@ -22,6 +21,8 @@ overflow-x:hidden ;
   font-size: 1.6rem;
   font-weight: 400;
 }
+
+
 
 img.clock {
   width: 100px;
