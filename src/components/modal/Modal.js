@@ -27,10 +27,14 @@ const Modal = ({ open, setOpen }) => {
     // createEvents(value);
     const createEvents = async () => {
       try {
-        setIsLoading(true);
+        let unFormattedDate =new Date(value.date)
         let newDate = new Date(value.date).toLocaleDateString("us-EN", options);
-        console.log(newDate);
-
+        let now = new Date()
+        if(unFormattedDate < now){
+          //if date is n the past
+          window.alert('Please Select future Date!')
+        }else{
+         setIsLoading(true);
         const request = await axios.post(
           "https://counter-3m98.onrender.com/api/v1/countdown/",
           {
@@ -44,7 +48,7 @@ const Modal = ({ open, setOpen }) => {
           console.log(request);
           setIsLoading(false);
           navigate(`/${formatName}`);
-        }
+        }}
       } catch (error) {
         console.log(error);
       }
@@ -66,7 +70,7 @@ const Modal = ({ open, setOpen }) => {
           <h4>Add New Event</h4>
         </div>
         <div className="bottom__modal ">
-          <form noValidate onSubmit={handleSubmit} className="flex">
+          <form  onSubmit={handleSubmit} className="flex">
             <div className="event__name flex">
               <label htmlFor="name">Name:</label>
               <input
