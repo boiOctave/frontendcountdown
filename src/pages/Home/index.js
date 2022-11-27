@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import clock from "../../assets/images/cl.png";
 import alarm from "../../assets/images/clock.png";
-import Modal from "../../components/modal/Modal";
+// import Modal from "../../components/modal/Modal";
 
 import "./Home.css";
 
@@ -22,7 +22,7 @@ const Home = () => {
 
       <img className="clock" alt="clock" src={clock} />
       <img className="alarm" alt="clock" src={alarm} />
-      <Modal open={openModal} setOpen={setOpenModal} />
+      {/* <Modal open={openModal} setOpen={setOpenModal} /> */}
     </div>
   );
 };
